@@ -1,0 +1,271 @@
+/* ===== GLOBAL RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins','Segoe UI',sans-serif;
+}
+
+body{
+    background:radial-gradient(circle at top,#e0f2fe,#bae6fd,#0f172a);
+    color:#0f172a;
+    overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+.header{
+    background:linear-gradient(135deg,#0ea5e9,#38bdf8,#0f172a);
+    text-align:center;
+    padding:70px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+/* floating diamond light */
+.header::before{
+    content:"";
+    position:absolute;
+    width:480px;
+    height:480px;
+    background:radial-gradient(circle,#ffffff,#7dd3fc,#0ea5e9);
+    top:-200px;
+    left:-200px;
+    filter:blur(160px);
+    animation:floatLight 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatLight{
+    from{transform:translate(0,0);}
+    to{transform:translate(200px,120px);}
+}
+
+/* ===== LOGO FRAME ===== */
+.logo-wrap{
+    position:relative;
+    display:inline-block;
+    padding:18px;
+    border-radius:50%;
+}
+
+.logo-wrap::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:conic-gradient(#ffd700,#ffffff,#38bdf8,#ffd700);
+    animation:rotateFrame 6s linear infinite;
+}
+
+@keyframes rotateFrame{
+    to{transform:rotate(360deg);}
+}
+
+.logo{
+    position:relative;
+    width:220px;
+    height:auto;
+    border-radius:50%;
+    background:#ffffff;
+    padding:10px;
+    filter:none;
+    z-index:2;
+}
+
+/* ===== HEADER TEXT ===== */
+.header h1{
+    margin-top:18px;
+    font-size:34px;
+    font-weight:800;
+    color:#ffffff;
+    letter-spacing:1px;
+    text-shadow:0 6px 20px rgba(0,0,0,.4);
+}
+
+/* ===== NAV ===== */
+nav{
+    margin-top:22px;
+}
+
+nav a{
+    color:#ffffff;
+    margin:0 18px;
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:3px;
+    background:linear-gradient(90deg,#ffd700,#ffffff);
+    left:0;
+    bottom:-8px;
+    transition:.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* ===== HERO ===== */
+.hero{
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(16px);
+    margin:70px auto;
+    padding:90px 40px;
+    width:90%;
+    max-width:1100px;
+    border-radius:32px;
+    text-align:center;
+    box-shadow:0 35px 80px rgba(0,0,0,0.25);
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(60px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:18px;
+    color:#0f172a;
+}
+
+.hero p{
+    font-size:18px;
+    color:#334155;
+}
+
+/* ===== GOLD DIAMOND BUTTON ===== */
+.btn{
+    display:inline-block;
+    padding:18px 52px;
+    margin:26px 14px;
+    border-radius:60px;
+    background:linear-gradient(135deg,#ffd700,#fff7cc,#38bdf8);
+    color:#0f172a;
+    text-decoration:none;
+    font-weight:800;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 18px 45px rgba(255,215,0,.55);
+    transition:.4s;
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    width:160%;
+    height:160%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.7),transparent);
+    top:-120%;
+    left:-120%;
+    transition:.6s;
+}
+
+.btn:hover::before{
+    top:120%;
+    left:120%;
+}
+
+.btn:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 28px 70px rgba(255,215,0,.9);
+}
+
+/* ===== CARDS ===== */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:34px;
+    flex-wrap:wrap;
+    padding:80px 20px;
+}
+
+.card{
+    width:290px;
+    padding:40px 30px;
+    background:rgba(255,255,255,0.9);
+    border-radius:30px;
+    text-align:center;
+    transition:.45s;
+    box-shadow:0 25px 55px rgba(0,0,0,.2);
+}
+
+.card:hover{
+    transform:translateY(-18px) scale(1.04);
+    box-shadow:0 35px 85px rgba(56,189,248,.55);
+}
+
+.card h3{
+    margin-bottom:14px;
+    color:#0f172a;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header{
+    background:linear-gradient(135deg,#0ea5e9,#38bdf8,#0f172a);
+    padding:55px;
+    text-align:center;
+    font-size:32px;
+    color:#ffffff;
+}
+
+/* ===== FORMS ===== */
+.form,.contact-box{
+    background:rgba(255,255,255,0.92);
+    width:380px;
+    margin:60px auto;
+    padding:40px;
+    border-radius:30px;
+    box-shadow:0 30px 70px rgba(0,0,0,.25);
+}
+
+.form input,.form select{
+    width:100%;
+    padding:14px;
+    margin-bottom:20px;
+    border:1px solid #cbd5f5;
+    border-radius:12px;
+}
+
+/* ===== EVENTS ===== */
+.events{
+    display:flex;
+    justify-content:center;
+    gap:34px;
+    flex-wrap:wrap;
+    padding:80px 20px;
+}
+
+.event-card{
+    width:320px;
+    border-radius:30px;
+    overflow:hidden;
+    background:rgba(255,255,255,0.92);
+    box-shadow:0 28px 70px rgba(0,0,0,.25);
+    transition:.45s;
+}
+
+.event-card:hover{
+    transform:translateY(-16px);
+    box-shadow:0 35px 90px rgba(56,189,248,.6);
+}
+
+.event-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#0f172a;
+    color:#e5e7eb;
+    text-align:center;
+    padding:30px;
+    margin-top:60px;
+}
